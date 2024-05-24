@@ -19,13 +19,13 @@ int	ft_putnbr(int n)
 
 	numb = n;
 	num_char = 0;
-	if	(numb < 0)
+	if (numb < 0)
 	{
 		num_char++;
 		write(1, "-", 1);
 		numb *= -1;
 	}
-	if	(numb > 9)
+	if (numb > 9)
 	{
 		num_char += ft_putnbr(numb / 10);
 		num_char += ft_putnbr(numb % 10);

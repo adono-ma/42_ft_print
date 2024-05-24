@@ -19,7 +19,7 @@ int	ft_putunsig(unsigned int n)
 
 	num_char = 0;
 	numb = n;
-	if	(n > 9)
+	if (n > 9)
 	{
 		num_char += ft_putunsig(numb / 10);
 		num_char += ft_putunsig(numb % 10);

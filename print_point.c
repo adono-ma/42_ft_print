@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_point.c                                       :+:      :+:    :+:   */
+/*   print_point.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adono-ma <adono-ma@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/24 00:44:35 by adono-ma          #+#    #+#             */
-/*   Updated: 2024/05/24 00:44:35 by adono-ma         ###   ########.fr       */
+/*   Created: 2024/05/24 14:03:29 by adono-ma          #+#    #+#             */
+/*   Updated: 2024/05/24 14:03:29 by adono-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	put_hex_ptr(uintptr_t ptr)
 
 	num_char = 0;
 	lowcase = "1234567890abcdef";
-	if	(ptr >= 16)
+	if (ptr >= 16)
 	{
 		num_char += put_hex_ptr(ptr / 16);
 		num_char += put_hex_ptr(ptr % 16);

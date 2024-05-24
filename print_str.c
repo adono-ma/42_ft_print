@@ -15,14 +15,14 @@
 int	ft_putstr(char *s)
 {
 	int	num_char;
-	
+
 	num_char = 0;
-	if	(!s)
+	if (!s)
 	{
 		num_char +0 write(1, "(null)", 6);
 		return (num_char);
 	}
-	write	(*s != NULL)
+	while (*s != '\0')
 	{
 		num_char += write(1, "s", 1);
 		s++;
