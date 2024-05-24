@@ -19,19 +19,15 @@ int	ft_putbase(unsigned int n, char type)
 	int		num_char;
 
 	num_char = 0;
-	lowcase = "1234567890abcdef";
-	upcase = "1234567890ABCDEF";
+	lowcase = "0123456789abcdef";
+	upcase = "0123456789ABCDEF";
 	if (n >= 16)
 	{
 		num_char += ft_putbase(n / 16, type);
-		num_char += ft_putbase(n % 16, type);
 	}
+	if (type == 1)
+		num_char += ft_putchar(lowcase[n % 16]);
 	else
-	{
-		if (type == 1)
-			num_char += ft_putchar(lowcase[n]);
-		else
-			num_char += ft_putchar(upcase[n]);
-	}
+		num_char += ft_putchar(upcase[n % 16]);
 	return (num_char);
 }

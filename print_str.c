@@ -19,12 +19,12 @@ int	ft_putstr(char *s)
 	num_char = 0;
 	if (!s)
 	{
-		num_char +0 write(1, "(null)", 6);
+		num_char += write(1, "(null)", 6);
 		return (num_char);
 	}
 	while (*s != '\0')
 	{
-		num_char += write(1, "s", 1);
+		num_char += write(1, s, 1);
 		s++;
 	}
 	return (num_char);

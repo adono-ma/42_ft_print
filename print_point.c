@@ -18,14 +18,12 @@ static int	put_hex_ptr(uintptr_t ptr)
 	int		num_char;
 
 	num_char = 0;
-	lowcase = "1234567890abcdef";
+	lowcase = "0123456789abcdef";
 	if (ptr >= 16)
 	{
 		num_char += put_hex_ptr(ptr / 16);
-		num_char += put_hex_ptr(ptr % 16);
 	}
-	else
-		num_char += ft_putchar(lowcase[ptr]);
+	num_char += ft_putchar(lowcase[ptr % 16]);
 	return (num_char);
 }
 
@@ -35,7 +33,12 @@ int	ft_putptr(void *ptr)
 	uintptr_t	numb;
 
 	num_char = 0;
-	numb = (ui)ptr;
+	numb = (uintptr_t)ptr;
+	if (numb == 0)
+	{
+		num_char += write(1, "(nil)", 5);
+		return (num_char);
+	}
 	num_char += write(1, "0x", 2);
 	num_char += put_hex_ptr(numb);
 	return (num_char);

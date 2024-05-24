@@ -19,7 +19,7 @@ static int	print_things(unsigned int result, int c, va_list arg)
 	else if (c == 's')
 		result += ft_putstr(va_arg(arg, char *));
 	else if (c == 'd' || c == 'i')
-		result += ft_putnmbr(va_arg(arg, int));
+		result += ft_putnbr(va_arg(arg, int));
 	else if (c == 'x')
 		result += ft_putbase(va_arg(arg, unsigned int), 1);
 	else if (c == 'X')
@@ -44,7 +44,7 @@ int	ft_printf(const char *str, ...)
 	result = 0;
 	array = "cspdiuxX %";
 	va_start(arg, str);
-	while (str[i] != NULL)
+	while (str[i] != '\0')
 	{
 		if (str[i] == '%' && ft_strchr(array, (const char)str[i + 1]))
 		{
